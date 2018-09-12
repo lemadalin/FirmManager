@@ -1,0 +1,62 @@
+﻿@model FirmManager.Models.Order
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Order</h4>
+    <hr />
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.OrderNumber)</th>
+            <td>@Html.DisplayFor(model => model.OrderNumber)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.OrderDate)</th>
+            <td>@Html.DisplayFor(model => model.OrderDate)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Customer)</th>
+            <td>@Html.DisplayFor(model => model.Customer.FullName)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.OrderItems)</th>
+            <td>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Product Title</th>
+                            <th>Product Category</th>
+                            <th>Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+
+                            foreach (var orderItem in Model.OrderItems)
+                            {
+                                @:<tr>
+                                    @:<td>@orderItem.Product.Title</td>
+                                    @:<td>@orderItem.Product.Category</td>
+                                    @:<td>@orderItem.Quantity</td>
+                                @:</tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ID" />
+        <input type="submit" value="Delete" class="action-button delete-button" /><br />
+        <a asp-action="Index" class="action-button"><i class="fas fa-arrow-left"></i> Back to List</a>
+    </form>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>

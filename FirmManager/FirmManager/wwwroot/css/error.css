@@ -1,0 +1,68 @@
+@import "https://fonts.googleapis.com/css?family=Roboto";
+html {
+  height: 100%; }
+  html body {
+    background-color: #3E4659;
+    font-family: 'Roboto', sans-serif;
+    height: 100%; }
+  html .error-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+    html .error-wrapper .error-code {
+      font-size: 100px;
+      font-weight: bold;
+      color: #CC6262; }
+    html .error-wrapper .error-message {
+      font-size: 50px;
+      font-weight: bold;
+      color: #35C4BA; }
+    html .error-wrapper .error-homepage-button-wrapper {
+      margin-top: 50px; }
+      html .error-wrapper .error-homepage-button-wrapper a {
+        text-decoration: none; }
+        html .error-wrapper .error-homepage-button-wrapper a .error-homepage-button {
+          font-weight: bold;
+          border: 1px solid #35C4BA;
+          padding: 20px;
+          text-transform: uppercase;
+          color: #FFFFFF;
+          border-radius: 0;
+          transition: all 0.3s ease-in-out; }
+          html .error-wrapper .error-homepage-button-wrapper a .error-homepage-button:hover {
+            background-color: #35C4BA;
+            color: #FFFFFF;
+            transition: all 0.3s ease-in-out; }
+
+@media (min-width: 768px) and (max-width: 979px) {
+  html body .error-wrapper .error-code {
+    font-size: 80px; }
+  html body .error-wrapper .error-message {
+    font-size: 30px; }
+  html body .error-wrapper .error-homepage-button-wrapper {
+    margin-top: 40px; }
+    html body .error-wrapper .error-homepage-button-wrapper a .error-homepage-button {
+      padding: 15px; } }
+
+@media all and (max-width: 767px) {
+  html body .error-wrapper .error-code {
+    font-size: 60px; }
+  html body .error-wrapper .error-message {
+    font-size: 20px; }
+  html body .error-wrapper .error-homepage-button-wrapper {
+    margin-top: 30px; }
+    html body .error-wrapper .error-homepage-button-wrapper a .error-homepage-button {
+      padding: 10px; } }
+
+@media all and (max-width: 480px) {
+  html body .error-wrapper .error-code {
+    font-size: 50px; }
+  html body .error-wrapper .error-message {
+    font-size: 15px; }
+  html body .error-wrapper .error-homepage-button-wrapper {
+    margin-top: 20px; }
+    html body .error-wrapper .error-homepage-button-wrapper a .error-homepage-button {
+      padding: 7px;
+      font-size: 11px; } }

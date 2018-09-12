@@ -1,0 +1,160 @@
+@import "https://fonts.googleapis.com/css?family=Roboto";
+html body {
+  font-family: Roboto;
+  background-image: url("../images/login-background.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  overflow-x: hidden; }
+  html body .login-form-container {
+    background: #FEFEFE none repeat scroll 0 0;
+    border-radius: 0;
+    margin: 180px auto;
+    width: 450px;
+    padding: 50px 50px 50px 50px; }
+    html body .login-form-container .login-form-text {
+      text-align: center; }
+      html body .login-form-container .login-form-text .logo {
+        width: 90px;
+        margin-bottom: 20px; }
+      html body .login-form-container .login-form-text h1 {
+        color: #222222;
+        font-size: 20px;
+        margin: 0 0 8px 0; }
+      html body .login-form-container .login-form-text p {
+        color: #888888;
+        font-size: 15px;
+        margin-bottom: 30px;
+        line-height: 25px; }
+    html body .login-form-container form .login-form-error ul {
+      list-style-type: none;
+      padding: 0; }
+      html body .login-form-container form .login-form-error ul li {
+        font-weight: bold;
+        color: red; }
+    html body .login-form-container form .form-control {
+      background: #FAFAFA none repeat scroll 0 0;
+      border: 1px solid #D5D5D5;
+      border-radius: 0;
+      font-size: 15px;
+      height: 50px;
+      line-height: 50px; }
+    html body .login-form-container form .remember-me-button {
+      border-radius: 0;
+      background-color: #35c4ba;
+      text-align: center;
+      height: 35px; }
+      html body .login-form-container form .remember-me-button span.glyphicon {
+        opacity: 0; }
+      html body .login-form-container form .remember-me-button:hover {
+        border-radius: 0;
+        background-color: #2dada4; }
+      html body .login-form-container form .remember-me-button.active span.glyphicon {
+        opacity: 1; }
+    html body .login-form-container form .login-button {
+      background: #49536C none repeat scroll 0 0;
+      border-radius: 0;
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: bold;
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      margin-top: 20px;
+      padding: 0; }
+      html body .login-form-container form .login-button:hover {
+        background-color: #3E4659; }
+
+@media (min-width: 768px) and (max-width: 979px) {
+  html body .login-form-container {
+    width: 410px; }
+    html body .login-form-container .login-form-text .logo {
+      width: 70px; }
+    html body .login-form-container .login-form-text h1 {
+      font-size: 18px; }
+    html body .login-form-container .login-form-text p {
+      font-size: 14px; }
+    html body .login-form-container form .form-control {
+      font-size: 14px;
+      height: 45px;
+      line-height: 45px; }
+    html body .login-form-container form .remember-me-button {
+      height: 33px;
+      font-size: 13px; }
+    html body .login-form-container form .login-button {
+      font-size: 13px;
+      font-weight: bold;
+      height: 45px;
+      line-height: 45px; } }
+
+@media all and (max-width: 767px) {
+  html body .login-form-container {
+    width: 380px; }
+    html body .login-form-container .login-form-text .logo {
+      width: 60px; }
+    html body .login-form-container .login-form-text h1 {
+      font-size: 17px; }
+    html body .login-form-container .login-form-text p {
+      font-size: 13px; }
+    html body .login-form-container form .form-group label {
+      font-size: 13px; }
+    html body .login-form-container form .form-control {
+      font-size: 14px;
+      height: 43px;
+      line-height: 43px; }
+    html body .login-form-container form .remember-me-button {
+      height: 30px;
+      font-size: 12px; }
+    html body .login-form-container form .login-button {
+      font-size: 12px;
+      font-weight: bold;
+      height: 43px;
+      line-height: 43px; } }
+
+@media all and (max-width: 480px) {
+  html body .login-form-container {
+    width: 330px; }
+    html body .login-form-container .login-form-text .logo {
+      width: 50px; }
+    html body .login-form-container .login-form-text h1 {
+      font-size: 17px; }
+    html body .login-form-container .login-form-text p {
+      font-size: 13px; }
+    html body .login-form-container form .form-group label {
+      font-size: 12px; }
+    html body .login-form-container form .form-control {
+      font-size: 13px;
+      height: 40px;
+      line-height: 40px; }
+    html body .login-form-container form .remember-me-button {
+      height: 30px;
+      font-size: 12px; }
+    html body .login-form-container form .login-button {
+      font-size: 12px;
+      font-weight: bold;
+      height: 40px;
+      line-height: 40px; } }
+
+@media all and (max-height: 900px) {
+  html body .login-form-container {
+    background: #FEFEFE none repeat scroll 0 0;
+    border-radius: 0;
+    margin: 130px auto; } }
+
+@media all and (max-height: 800px) {
+  html body .login-form-container {
+    background: #FEFEFE none repeat scroll 0 0;
+    border-radius: 0;
+    margin: 100px auto; } }
+
+@media all and (max-height: 750px) {
+  html body .login-form-container {
+    background: #FEFEFE none repeat scroll 0 0;
+    border-radius: 0;
+    margin: 70px auto; } }
+
+@media all and (max-height: 700px) {
+  html body .login-form-container {
+    background: #FEFEFE none repeat scroll 0 0;
+    border-radius: 0;
+    margin: 50px auto; } }

@@ -1,0 +1,55 @@
+﻿@model FirmManager.Models.Product
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Product</h4>
+    <hr />
+    <div class="row">
+        <div class="col-lg-6">
+            <table class="table table-bordered table-striped">
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Title)</th>
+                    <td>@Html.DisplayFor(model => model.Title)</td>
+                </tr>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Category)</th>
+                    <td>@Html.DisplayFor(model => model.Category)</td>
+                </tr>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Length)</th>
+                    <td>@Html.DisplayFor(model => model.Length) cm</td>
+                </tr>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Width)</th>
+                    <td>@Html.DisplayFor(model => model.Width) cm</td>
+                </tr>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Height)</th>
+                    <td>@Html.DisplayFor(model => model.Height) cm</td>
+                </tr>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Price)</th>
+                    <td>@Html.DisplayFor(model => model.Price)</td>
+                </tr>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.UnitsInStock)</th>
+                    <td>@Html.DisplayFor(model => model.UnitsInStock)</td>
+                </tr>
+            </table>
+
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="ID" />
+                <input type="submit" value="Delete" class="action-button delete-button" /><br />
+                <a asp-action="Index" class="action-button"><i class="fas fa-arrow-left"></i> Back to List</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>

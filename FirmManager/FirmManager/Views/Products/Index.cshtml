@@ -1,0 +1,103 @@
+﻿@model PaginatedList<FirmManager.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<link href="~/lib/jquery-ui-css/jquery-ui.css" rel="stylesheet" />
+
+<h2>Products</h2>
+<br />
+<p>
+    <a asp-action="Create" class="action-button"><i class="fas fa-plus"></i> Create New</a>
+</p>
+
+<form asp-action="Index" method="get">
+    <div class="form-group">
+        <p>
+            <input type="text" name="SearchString" class="form-control searchInput" placeholder="Search by any" value="@ViewData["currentFilter"]" />
+            <a value="Search" class="action-button searchButton"><i class="fas fa-search"></i> Search</a>
+            <a asp-action="Index" class="action-button"><i class="fas fa-arrow-left"></i> Back to Full List</a>
+        </p>
+    </div>
+</form>
+
+<div class="table-responsive">
+    <table class="table table-hover table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["TitleSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Title <i class="fas fa-sort"></i></a>
+                </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["CategorySortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Category <i class="fas fa-sort"></i></a>
+                </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["SizeSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Size <i class="fas fa-sort"></i></a>
+                </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["PriceSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Price <i class="fas fa-sort"></i></a>
+                </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["UnitsInStockSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Units In Stock <i class="fas fa-sort"></i></a>
+                </th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Size)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UnitsInStock)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ID" class="action-button"><i class="fas fa-edit"></i> Edit</a>
+                        <a asp-action="Details" asp-route-id="@item.ID" class="action-button"><i class="fas fa-info-circle"></i> Details</a>
+                        <a asp-action="Delete" asp-route-id="@item.ID" class="action-button"><i class="far fa-trash-alt"></i> Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-ui-dist/jquery-ui.min.js"></script>
+<script src="~/js/pagination.js"></script>
+<script src="~/js/productAutocomplete.js"></script>
+
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-page="1"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn action-button">
+    <i class="fas fa-fast-backward"></i>
+</a>
+
+<span id="pages">
+    @for (var i = 0; i < Model.TotalPages; i++)
+    {
+        <a asp-action="Index" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-page="@(i+1)" asp-route-currentFilter="@ViewData["CurrentFilter"]" class="btn action-button">@(i + 1)</a>
+    }
+</span>
+
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-page="@(Model.TotalPages)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn action-button">
+    <i class="fas fa-fast-forward"></i>
+</a>

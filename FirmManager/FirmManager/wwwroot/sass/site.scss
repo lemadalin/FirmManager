@@ -1,0 +1,331 @@
+﻿@import "https://fonts.googleapis.com/css?family=Roboto";
+
+html {
+
+    body {
+        font-family: Roboto;
+        background: #FCFCFC;
+
+        .wrapper {
+            display: flex;
+            width: 100%;
+
+            #sidebar {
+                width: 260px;
+                position: fixed;
+                top: 0;
+                left: -260px;
+                height: 100vh;
+                z-index: 999;
+                background: #3E4659;
+                color: #FFFFFF;
+                transition: all 0.3s;
+                box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+
+                &.active {
+                    left: 0;
+                }
+
+                .sidebar-header {
+                    padding: 20px;
+                    background: #3E4659;
+                    border-bottom: 5px solid #35C4BA;
+
+                    .logo {
+                        width: 60px;
+                        display: inline;
+                        margin-left: -15px;
+                        margin-right: 10px;
+                    }
+
+                    .sidebar-header-text {
+                        font-size: 20px;
+                        color: #FFFFFF;
+                    }
+                }
+
+                ul {
+                    padding: 20px 0;
+
+                    li {
+                        a {
+                            padding: 25px;
+                            font-size: 1.2em;
+                            display: block;
+                            color: #FFFFFF;
+
+                            &:hover {
+                                color: #49D1C9;
+                                background: #49536C;
+                                border-left: 5px solid #35C4BA;
+                                text-decoration: none;
+                            }
+                        }
+
+                        &.active > a {
+                            color: #49D1C9;
+                            background: #49536C;
+                            border-left: 5px solid #35C4BA;
+                        }
+                    }
+                }
+            }
+
+            #dismiss {
+                width: 35px;
+                height: 35px;
+                line-height: 35px;
+                text-align: center;
+                background: #35C4BA;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                cursor: pointer;
+                -webkit-transition: all 0.3s;
+                -o-transition: all 0.3s;
+                transition: all 0.3s;
+
+                &:hover {
+                    background: #21A299;
+                    color: #FFFFFF;
+                }
+            }
+
+            .content {
+                padding: 20px;
+                min-height: 100vh;
+                transition: all 13s;
+                width: 100%;
+
+                p {
+                    font-size: 1.2em;
+                    line-height: 1.5em;
+                    color: #AAAAAA;
+                }
+
+                a {
+                    color: inherit;
+                    text-decoration: none;
+                    transition: all 0.3s;
+
+                    &:hover, &:focus {
+                        color: inherit;
+                        text-decoration: none;
+                        transition: all 0.3s;
+                    }
+                }
+
+                #sidebarCollapse {
+                    background: #3E4659;
+                    border-radius: 0;
+                    text-decoration: none;
+                    margin-bottom: 20px;
+
+                    i {
+                        color: #35C4BA;
+                    }
+                }
+
+                .jumbotron {
+                    overflow-x: auto;
+                    border-radius: 0;
+                }
+
+
+                .piechart {
+                    height: 700px;
+                }
+
+                #customersPerState {
+                    display: block;
+
+                    .bar {
+                        fill: #005EA1;
+
+                        &:hover {
+                            fill: #00AFDB;
+                        }
+                    }
+                }
+
+                #ordersPerMonth {
+                    display: block;
+
+                    .bar {
+                        fill: #2F9D66;
+
+                        &:hover {
+                            fill: #6DC066;
+                        }
+                    }
+                }
+
+                #productsSoldPerCategory, #totalSalesPerCategory {
+                    .arc {
+                        text {
+                            font: 16px Roboto;
+                            text-anchor: middle;
+                        }
+
+                        path {
+                            stroke: #FFFFFF;
+                            stroke-width: 2px;
+                        }
+                    }
+                }
+
+                .placeholder-spinner {
+                    text-align: center;
+                    font-size: 150px;
+                }
+
+                #map {
+                    height: 400px;
+                    width: 100%;
+                }
+
+                #quantities {
+                    margin-top: 110px;
+                    width: 20%;
+                    height: 380px;
+                    overflow-y: auto;
+                }
+
+                #customersPerState-wrapper {
+                    width: 97%;
+                }
+
+                .searchInput {
+                    width: 20%;
+                    display: inline;
+                }
+
+                .activePage {
+                    color: #FFFFFF !important;
+                    background: #3E4659;
+                    border-color: #3E4659;
+                }
+
+                .ui-autocomplete {
+                    max-height: 200px;
+                    overflow-y: auto;
+                    overflow-x: hidden;
+                    border: 1px solid black;
+                }
+
+                .action-button {
+                    letter-spacing: 1px;
+                    cursor: pointer;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    -webkit-transition: all 0.2s;
+                    -moz-transition: all 0.2s;
+                    transition: all 0.2s;
+                    color: #3E4659;
+                    border-radius: 0;
+                    border-color: #3E4659;
+                    font-size: 12px;
+                    border: 1px solid;
+                    padding: 8px 15px;
+
+                    &:hover, &:active {
+                        color: #FFFFFF;
+                        background: #3E4659;
+                        border-color: #3E4659;
+                    }
+                }
+
+                .delete-button {
+                    margin-bottom: 15px;
+                }
+
+                input.form-control, select.form-control {
+                    border-radius: 0;
+                    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+                    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+                }
+
+                input.form-control:focus {
+                    border-color: #35C4BA;
+                    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 5px #35C4BA;
+                    outline: 0 none;
+                }
+
+                .product-dropdown {
+                    height: 400px !important;
+                }
+
+                table {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1500px) {
+    html {
+
+        body {
+
+            .wrapper {
+
+                .content {
+                    .jumbotron {
+                        h2 {
+                            font-size: 25px;
+                        }
+                    }
+
+                    .searchInput {
+                        height: 30px;
+                        font-size: 14px;
+                    }
+
+                    .action-button {
+                        padding: 8px 10px;
+                        font-size: 11px;
+                    }
+
+                    table {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 920px) {
+    html {
+
+        body {
+
+            .wrapper {
+
+                .content {
+
+                    .jumbotron {
+                        h2 {
+                            font-size: 22px;
+                        }
+                    }
+
+                    .searchInput {
+                        height: 28px;
+                        font-size: 13px;
+                    }
+
+                    .action-button {
+                        padding: 7px 8px;
+                        font-size: 10px;
+                    }
+
+                    table {
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+}

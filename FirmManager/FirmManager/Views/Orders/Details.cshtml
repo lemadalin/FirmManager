@@ -1,0 +1,91 @@
+﻿@model FirmManager.Models.Order
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div class="row">
+    <div class="col-xs-6">
+        <h4>Order</h4>
+        <hr />
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.OrderNumber)</th>
+                <td>@Html.DisplayFor(model => model.OrderNumber)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.OrderDate)</th>
+                <td>@Html.DisplayFor(model => model.OrderDate)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Customer)</th>
+                <td>@Html.DisplayFor(model => model.Customer.FullName)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Customer.Street)</th>
+                <td id="address">@Html.DisplayFor(model => model.Customer.Street)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Customer.City)</th>
+                <td id="city">@Html.DisplayFor(model => model.Customer.City)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Customer.State)</th>
+                <td id="state">@Html.DisplayFor(model => model.Customer.State)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Customer.Country)</th>
+                <td id="country">@Html.DisplayFor(model => model.Customer.Country)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.OrderItems)</th>
+                <td>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Product Title</th>
+                                <th>Product Category</th>
+                                <th>Quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+
+                                foreach (var orderItem in Model.OrderItems)
+                                {
+                                    @:<tr>
+                                        @:<td>@orderItem.Product.Title</td>
+                                        @:<td>@orderItem.Product.Category</td>
+                                        @:<td>@orderItem.Quantity</td>
+                                    @:</tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Total)</th>
+                <td>@Html.DisplayFor(model => model.Total)</td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-xs-6">
+        <h4>Order shipping location</h4>
+        <div id="map"></div>
+        <br />
+        <button class="action-button" onclick="calcRoute()">Calculate route</button>
+        <span id="routeDuration"></span>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID" class="action-button"><i class="fas fa-edit"></i> Edit</a>
+    <a asp-action="Index" class="action-button"><i class="fas fa-arrow-left"></i> Back to List</a>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/orderDetails.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChbVOMQefQNIe3sb7Tp_NiqTOu5XmkS58&callback=initialize"></script>

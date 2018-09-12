@@ -1,0 +1,97 @@
+﻿@model PaginatedList<FirmManager.Models.Order>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<link href="~/lib/jquery-ui-css/jquery-ui.css" rel="stylesheet" />
+
+<h2>Orders</h2>
+<br />
+<p>
+    <a asp-action="Create" class="action-button"><i class="fas fa-plus"></i> Create New</a>
+</p>
+
+<form asp-action="Index" method="get">
+    <div class="form-group">
+        <p>
+            <input type="text" name="SearchString" class="form-control searchInput" placeholder="Search by any" value="@ViewData["currentFilter"]" />
+            <a value="Search" class="action-button searchButton"><i class="fas fa-search"></i> Search</a>
+            <a asp-action="Index" class="action-button"><i class="fas fa-arrow-left"></i> Back to Full List</a>
+        </p>
+    </div>
+</form>
+
+<div class="table-responsive">
+    <table class="table table-hover table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["OrderNumberSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Order Number <i class="fas fa-sort"></i></a>
+                </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["OrderDateSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Order Date <i class="fas fa-sort"></i></a>
+                </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["CustomerSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Customer <i class="fas fa-sort"></i></a>
+                </th>
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@ViewData["OrderStatusSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Order Status <i class="fas fa-sort"></i></a>
+                </th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderDate)
+                    </td>
+                    <td id = "customer@(item.CustomerID)">
+                        @Html.DisplayFor(modelItem => item.Customer.FullName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderStatus)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ID" class="action-button"><i class="fas fa-edit"></i> Edit</a>
+                        <a asp-action="Details" asp-route-id="@item.ID" class="action-button"><i class="fas fa-info-circle"></i> Details</a>
+                        <a asp-action="Delete" asp-route-id="@item.ID" class="action-button"><i class="far fa-trash-alt"></i> Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-ui-dist/jquery-ui.min.js"></script>
+<script src="~/js/pagination.js"></script>
+<script src="~/js/orderAutocomplete.js"></script>
+
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-page="1"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn action-button">
+    <i class="fas fa-fast-backward"></i>
+</a>
+
+<span id="pages">
+    @for (var i = 0; i < Model.TotalPages; i++)
+    {
+        <a asp-action="Index" asp-route-sortOrder="@ViewData["CurrentSort"]" asp-route-page="@(i+1)" asp-route-currentFilter="@ViewData["CurrentFilter"]" class="btn action-button">@(i + 1)</a>
+    }
+</span>
+
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-page="@(Model.TotalPages)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn action-button">
+    <i class="fas fa-fast-forward"></i>
+</a>

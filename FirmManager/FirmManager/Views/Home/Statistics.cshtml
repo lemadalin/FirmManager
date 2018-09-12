@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Statistics";
+}
+
+<div class="jumbotron">
+    <h2>Number of customers from each state</h2>
+    <svg id="customersPerState" width="1400" height="500"></svg>
+</div>
+
+<div class="jumbotron">
+    <h2>Number of orders from each month</h2>
+    <svg id="ordersPerMonth" width="1400" height="500"></svg>
+</div>
+
+<div class="row">
+    <div class="col-xs-6">
+        <div class="jumbotron piechart">
+            <h2>Number of sold products from each category</h2>
+            <div class="placeholder-spinner" id="placeholder-spinner-soldProducts"><i class="fa fa-spinner fa-spin"></i></div>
+            <div id="productsSoldPerCategory"></div>
+        </div>
+    </div>
+    <div class="col-xs-6">
+        <div class="jumbotron piechart">
+            <h2>Total sales from each category</h2>
+            <div class="placeholder-spinner" id="placeholder-spinner-totalSales"><i class="fa fa-spinner fa-spin"></i></div>
+            <div id="totalSalesPerCategory"></div>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="~/lib/d3/dist/d3.min.js"></script>
+<script src="~/js/statistics.js"></script>

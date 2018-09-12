@@ -1,0 +1,192 @@
+@import "https://fonts.googleapis.com/css?family=Roboto";
+html body {
+  font-family: Roboto;
+  background: #FCFCFC; }
+  html body .wrapper {
+    display: flex;
+    width: 100%; }
+    html body .wrapper #sidebar {
+      width: 260px;
+      position: fixed;
+      top: 0;
+      left: -260px;
+      height: 100vh;
+      z-index: 999;
+      background: #3E4659;
+      color: #FFFFFF;
+      transition: all 0.3s;
+      box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2); }
+      html body .wrapper #sidebar.active {
+        left: 0; }
+      html body .wrapper #sidebar .sidebar-header {
+        padding: 20px;
+        background: #3E4659;
+        border-bottom: 5px solid #35C4BA; }
+        html body .wrapper #sidebar .sidebar-header .logo {
+          width: 60px;
+          display: inline;
+          margin-left: -15px;
+          margin-right: 10px; }
+        html body .wrapper #sidebar .sidebar-header .sidebar-header-text {
+          font-size: 20px;
+          color: #FFFFFF; }
+      html body .wrapper #sidebar ul {
+        padding: 20px 0; }
+        html body .wrapper #sidebar ul li a {
+          padding: 25px;
+          font-size: 1.2em;
+          display: block;
+          color: #FFFFFF; }
+          html body .wrapper #sidebar ul li a:hover {
+            color: #49D1C9;
+            background: #49536C;
+            border-left: 5px solid #35C4BA;
+            text-decoration: none; }
+        html body .wrapper #sidebar ul li.active > a {
+          color: #49D1C9;
+          background: #49536C;
+          border-left: 5px solid #35C4BA; }
+    html body .wrapper #dismiss {
+      width: 35px;
+      height: 35px;
+      line-height: 35px;
+      text-align: center;
+      background: #35C4BA;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      -webkit-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s; }
+      html body .wrapper #dismiss:hover {
+        background: #21A299;
+        color: #FFFFFF; }
+    html body .wrapper .content {
+      padding: 20px;
+      min-height: 100vh;
+      transition: all 13s;
+      width: 100%; }
+      html body .wrapper .content p {
+        font-size: 1.2em;
+        line-height: 1.5em;
+        color: #AAAAAA; }
+      html body .wrapper .content a {
+        color: inherit;
+        text-decoration: none;
+        transition: all 0.3s; }
+        html body .wrapper .content a:hover, html body .wrapper .content a:focus {
+          color: inherit;
+          text-decoration: none;
+          transition: all 0.3s; }
+      html body .wrapper .content #sidebarCollapse {
+        background: #3E4659;
+        border-radius: 0;
+        text-decoration: none;
+        margin-bottom: 20px; }
+        html body .wrapper .content #sidebarCollapse i {
+          color: #35C4BA; }
+      html body .wrapper .content .jumbotron {
+        overflow-x: auto;
+        border-radius: 0; }
+      html body .wrapper .content .piechart {
+        height: 700px; }
+      html body .wrapper .content #customersPerState {
+        display: block; }
+        html body .wrapper .content #customersPerState .bar {
+          fill: #005EA1; }
+          html body .wrapper .content #customersPerState .bar:hover {
+            fill: #00AFDB; }
+      html body .wrapper .content #ordersPerMonth {
+        display: block; }
+        html body .wrapper .content #ordersPerMonth .bar {
+          fill: #2F9D66; }
+          html body .wrapper .content #ordersPerMonth .bar:hover {
+            fill: #6DC066; }
+      html body .wrapper .content #productsSoldPerCategory .arc text, html body .wrapper .content #totalSalesPerCategory .arc text {
+        font: 16px Roboto;
+        text-anchor: middle; }
+      html body .wrapper .content #productsSoldPerCategory .arc path, html body .wrapper .content #totalSalesPerCategory .arc path {
+        stroke: #FFFFFF;
+        stroke-width: 2px; }
+      html body .wrapper .content .placeholder-spinner {
+        text-align: center;
+        font-size: 150px; }
+      html body .wrapper .content #map {
+        height: 400px;
+        width: 100%; }
+      html body .wrapper .content #quantities {
+        margin-top: 110px;
+        width: 20%;
+        height: 380px;
+        overflow-y: auto; }
+      html body .wrapper .content #customersPerState-wrapper {
+        width: 97%; }
+      html body .wrapper .content .searchInput {
+        width: 20%;
+        display: inline; }
+      html body .wrapper .content .activePage {
+        color: #FFFFFF !important;
+        background: #3E4659;
+        border-color: #3E4659; }
+      html body .wrapper .content .ui-autocomplete {
+        max-height: 200px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        border: 1px solid black; }
+      html body .wrapper .content .action-button {
+        letter-spacing: 1px;
+        cursor: pointer;
+        font-weight: bold;
+        text-transform: uppercase;
+        -webkit-transition: all 0.2s;
+        -moz-transition: all 0.2s;
+        transition: all 0.2s;
+        color: #3E4659;
+        border-radius: 0;
+        border-color: #3E4659;
+        font-size: 12px;
+        border: 1px solid;
+        padding: 8px 15px; }
+        html body .wrapper .content .action-button:hover, html body .wrapper .content .action-button:active {
+          color: #FFFFFF;
+          background: #3E4659;
+          border-color: #3E4659; }
+      html body .wrapper .content .delete-button {
+        margin-bottom: 15px; }
+      html body .wrapper .content input.form-control, html body .wrapper .content select.form-control {
+        border-radius: 0;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+        transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s; }
+      html body .wrapper .content input.form-control:focus {
+        border-color: #35C4BA;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 5px #35C4BA;
+        outline: 0 none; }
+      html body .wrapper .content .product-dropdown {
+        height: 400px !important; }
+      html body .wrapper .content table {
+        font-size: 15px; }
+
+@media (max-width: 1500px) {
+  html body .wrapper .content .jumbotron h2 {
+    font-size: 25px; }
+  html body .wrapper .content .searchInput {
+    height: 30px;
+    font-size: 14px; }
+  html body .wrapper .content .action-button {
+    padding: 8px 10px;
+    font-size: 11px; }
+  html body .wrapper .content table {
+    font-size: 14px; } }
+
+@media (max-width: 920px) {
+  html body .wrapper .content .jumbotron h2 {
+    font-size: 22px; }
+  html body .wrapper .content .searchInput {
+    height: 28px;
+    font-size: 13px; }
+  html body .wrapper .content .action-button {
+    padding: 7px 8px;
+    font-size: 10px; }
+  html body .wrapper .content table {
+    font-size: 13px; } }

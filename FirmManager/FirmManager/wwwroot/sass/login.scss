@@ -1,0 +1,318 @@
+﻿@import "https://fonts.googleapis.com/css?family=Roboto";
+
+html {
+
+    body {
+        font-family: Roboto;
+        background-image: url("../images/login-background.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        overflow-x: hidden;
+
+        .login-form-container {
+            background: #FEFEFE none repeat scroll 0 0;
+            border-radius: 0;
+            margin: 180px auto;
+            width: 450px;
+            padding: 50px 50px 50px 50px;
+
+            .login-form-text {
+                text-align: center;
+
+                .logo {
+                    width: 90px;
+                    margin-bottom: 20px;
+                }
+
+                h1 {
+                    color: #222222;
+                    font-size: 20px;
+                    margin: 0 0 8px 0;
+                }
+
+                p {
+                    color: #888888;
+                    font-size: 15px;
+                    margin-bottom: 30px;
+                    line-height: 25px;
+                }
+            }
+
+            form {
+
+                .login-form-error {
+
+                    ul {
+                        list-style-type: none;
+                        padding: 0;
+
+                        li {
+                            font-weight: bold;
+                            color: red;
+                        }
+                    }
+                }
+
+                .form-control {
+                    background: #FAFAFA none repeat scroll 0 0;
+                    border: 1px solid #D5D5D5;
+                    border-radius: 0;
+                    font-size: 15px;
+                    height: 50px;
+                    line-height: 50px;
+                }
+
+                .remember-me-button {
+                    border-radius: 0;
+                    background-color: #35c4ba;
+                    text-align: center;
+                    height: 35px;
+
+                    span.glyphicon {
+                        opacity: 0;
+                    }
+
+                    &:hover {
+                        border-radius: 0;
+                        background-color: #2dada4;
+                    }
+
+                    &.active {
+                        span.glyphicon {
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                .login-button {
+                    background: #49536C none repeat scroll 0 0;
+                    border-radius: 0;
+                    color: #ffffff;
+                    font-size: 15px;
+                    font-weight: bold;
+                    width: 100%;
+                    height: 50px;
+                    line-height: 50px;
+                    margin-top: 20px;
+                    padding: 0;
+
+                    &:hover {
+                        background-color: #3E4659;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+    html {
+
+        body {
+
+            .login-form-container {
+                width: 410px;
+
+                .login-form-text {
+
+                    .logo {
+                        width: 70px;
+                    }
+
+                    h1 {
+                        font-size: 18px;
+                    }
+
+                    p {
+                        font-size: 14px;
+                    }
+                }
+
+                form {
+
+                    .form-control {
+                        font-size: 14px;
+                        height: 45px;
+                        line-height: 45px;
+                    }
+
+                    .remember-me-button {
+                        height: 33px;
+                        font-size: 13px;
+                    }
+
+                    .login-button {
+                        font-size: 13px;
+                        font-weight: bold;
+                        height: 45px;
+                        line-height: 45px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 767px) {
+    html {
+
+        body {
+
+            .login-form-container {
+                width: 380px;
+
+                .login-form-text {
+
+                    .logo {
+                        width: 60px;
+                    }
+
+                    h1 {
+                        font-size: 17px;
+                    }
+
+                    p {
+                        font-size: 13px;
+                    }
+                }
+
+                form {
+                    .form-group {
+                        label {
+                            font-size: 13px;
+                        }
+                    }
+
+                    .form-control {
+                        font-size: 14px;
+                        height: 43px;
+                        line-height: 43px;
+                    }
+
+                    .remember-me-button {
+                        height: 30px;
+                        font-size: 12px;
+                    }
+
+                    .login-button {
+                        font-size: 12px;
+                        font-weight: bold;
+                        height: 43px;
+                        line-height: 43px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 480px) {
+    html {
+
+        body {
+
+            .login-form-container {
+                width: 330px;
+
+                .login-form-text {
+
+                    .logo {
+                        width: 50px;
+                    }
+
+                    h1 {
+                        font-size: 17px;
+                    }
+
+                    p {
+                        font-size: 13px;
+                    }
+                }
+
+                form {
+
+                    .form-group {
+                        label {
+                            font-size: 12px;
+                        }
+                    }
+                    
+                    .form-control {
+                        font-size: 13px;
+                        height: 40px;
+                        line-height: 40px;
+                    }
+
+                    .remember-me-button {
+                        height: 30px;
+                        font-size: 12px;
+                    }
+
+                    .login-button {
+                        font-size: 12px;
+                        font-weight: bold;
+                        height: 40px;
+                        line-height: 40px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-height: 900px) {
+    html {
+
+        body {
+
+            .login-form-container {
+                background: #FEFEFE none repeat scroll 0 0;
+                border-radius: 0;
+                margin: 130px auto;
+            }
+        }
+    }
+}
+
+@media all and (max-height: 800px) {
+    html {
+
+        body {
+
+            .login-form-container {
+                background: #FEFEFE none repeat scroll 0 0;
+                border-radius: 0;
+                margin: 100px auto;
+            }
+        }
+    }
+}
+
+@media all and (max-height: 750px) {
+    html {
+
+        body {
+
+            .login-form-container {
+                background: #FEFEFE none repeat scroll 0 0;
+                border-radius: 0;
+                margin: 70px auto;
+            }
+        }
+    }
+}
+
+@media all and (max-height: 700px) {
+    html {
+
+        body {
+
+            .login-form-container {
+                background: #FEFEFE none repeat scroll 0 0;
+                border-radius: 0;
+                margin: 50px auto;
+            }
+        }
+    }
+}

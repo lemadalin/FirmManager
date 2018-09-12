@@ -1,0 +1,53 @@
+﻿@model FirmManager.Models.Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div class="row">
+    <div class="col-lg-6">
+        <div>
+            <h4>Product</h4>
+            <hr />
+
+            <table class="table table-bordered table-striped">
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Title)</th>
+                    <td>@Html.DisplayFor(model => model.Title)</td>
+                </tr>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Category)</th>
+                    <td>@Html.DisplayFor(model => model.Category)</td>
+                </tr>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Length)</th>
+                    <td>@Html.DisplayFor(model => model.Length) cm</td>
+                </tr>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Width)</th>
+                    <td>@Html.DisplayFor(model => model.Width) cm</td>
+                </tr>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Height)</th>
+                    <td>@Html.DisplayFor(model => model.Height) cm</td>
+                </tr>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Price)</th>
+                    <td>@Html.DisplayFor(model => model.Price)</td>
+                </tr>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.UnitsInStock)</th>
+                    <td>@Html.DisplayFor(model => model.UnitsInStock)</td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <a asp-action="Edit" asp-route-id="@Model.ID" class="action-button"><i class="fas fa-edit"></i> Edit</a>
+            <a asp-action="Index" class="action-button"><i class="fas fa-arrow-left"></i> Back to List</a>
+        </div>
+    </div>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
