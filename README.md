@@ -3,6 +3,7 @@
 FirmManager is a web application that allows business owners to run their website with a business mindset. It's easier than ever to manage all the customers, products and orders that your business has, and also visualize data as interactive graphics.
 
 ## Technologies used
+
 *Frontend:*
 * HTML/CSS/JavaScript
 * SASS
